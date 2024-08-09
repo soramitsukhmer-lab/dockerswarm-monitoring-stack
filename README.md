@@ -3,9 +3,9 @@
 WIP
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/01b31235-f1c7-4b8f-9292-464691b222ff">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/61f7f8f8-9b7b-4d06-b131-7937f73170ba">
-  <img src="https://github.com/user-attachments/assets/61f7f8f8-9b7b-4d06-b131-7937f73170ba">
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/e50d5b3f-ae57-4218-9019-26b6b07851ea">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/user-attachments/assets/471fcf22-1211-4cdb-8e88-30fee6528b1d">
+  <img src="https://github.com/user-attachments/assets/471fcf22-1211-4cdb-8e88-30fee6528b1d">
 </picture>
 
 ## Pre-requisites
