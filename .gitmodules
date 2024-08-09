@@ -1,0 +1,9 @@
+[submodule "promstack"]
+	path = promstack
+	url = https://github.com/swarmlibs/promstack.git
+[submodule "logstack"]
+	path = logstack
+	url = https://github.com/swarmlibs/logstack.git
+[submodule "swarmlibs"]
+	path = swarmlibs
+	url = https://github.com/swarmlibs/swarmlibs.git
