@@ -9,14 +9,13 @@ help:
 	@echo "  remove: remove all services"
 
 deploy:
-	$(MAKE) -C swarmlibs deploy
-	$(MAKE) -C promstack deploy
-	$(MAKE) -C logstack deploy
+	$(MAKE) -C swarmlibs deploy detach=false
+	$(MAKE) -C promstack deploy detach=false
+	$(MAKE) -C logstack  deploy detach=false
 
 remove:
-	$(MAKE) -C logstack remove
-	$(MAKE) -C promstack remove
-	$(MAKE) -C swarmlibs remove
+	$(MAKE) -C logstack  remove detach=false
+	$(MAKE) -C promstack remove detach=false
 
 sync:
 	git submodule update --init --recursive -- swarmlibs
