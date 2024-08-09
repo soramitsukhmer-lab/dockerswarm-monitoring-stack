@@ -1,4 +1,4 @@
-make: .make/init
+make: .make/init sync
 
 sync:
 	git pull --recurse-submodules
