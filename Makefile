@@ -7,6 +7,10 @@ deploy: .stack/swarmlibs
 	@$(MAKE) -C promstack deploy detach=false
 	@$(MAKE) -C logstack  deploy detach=false
 
+upgrade: .stack/swarmlibs
+	@$(MAKE) -C promstack upgrade
+	@$(MAKE) -C logstack  upgrade
+
 remove:
 	@$(MAKE) -C promstack remove
 	@$(MAKE) -C logstack  remove
