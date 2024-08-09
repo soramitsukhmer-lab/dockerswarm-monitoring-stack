@@ -13,7 +13,7 @@ remove:
 
 .stack/init:
 	@mkdir -p .stack && touch .stack/init
-	hacks/reinitialize.sh
+	.stack/reinitialize.sh
 	git pull --recurse-submodules
 	git config --local submodule.recurse true
 	git config --local status.submodulesummary 1
