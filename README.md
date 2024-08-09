@@ -13,6 +13,18 @@ A standard issued monitoring stack for Docker Swarm cluster.
 - A Docker Swarm cluster with at least 3 nodes
 - Configure Docker daemon to expose metrics for Prometheus
 
+## Promstack
+
+A Docker Stack deployment for the monitoring suite for Docker Swarm includes (Grafana, Prometheus, cAdvisor, Node exporter and Blackbox prober exporter)
+
+See https://github.com/swarmlibs/promstack for more information.
+
+## Logstack
+
+Like Promstack, but for logs. Includes (Grafana Loki and Promtail)
+
+See https://github.com/swarmlibs/logstack for more information.
+
 ## Usage
 
 Initialize, (only needed to be run once):
