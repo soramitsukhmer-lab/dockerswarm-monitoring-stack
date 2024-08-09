@@ -1,6 +1,6 @@
 # About
 
-A standard issued monitoring stack for Docker Swarm cluster.
+A simple one-click deployment of a `promstack` and `logstack` for Docker Swarm cluster.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://github.com/user-attachments/assets/e50d5b3f-ae57-4218-9019-26b6b07851ea">
