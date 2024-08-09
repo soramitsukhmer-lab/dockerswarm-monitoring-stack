@@ -1,4 +1,4 @@
-it:
+make: sync
 	git config --local submodule.recurse true
 	git config --local status.submodulesummary 1
 
@@ -18,9 +18,8 @@ remove:
 	$(MAKE) -C promstack remove detach=false
 
 sync:
-	git submodule update --init --recursive -- swarmlibs
-	git submodule update --init --recursive -- promstack
-	git submodule update --init --recursive -- logstack
+	git pull --recurse-submodules
+
 reinitialize: hacks/reinitialize.sh sync
 .PHONY: hacks/reinitialize.sh
 hacks/reinitialize.sh:

@@ -15,8 +15,12 @@ WIP
 
 ## Usage
 
-Recursivly sync the modules with remote repository, run:
+Initialize, (only needed to be run once):
+```sh
+make
+```
 
+Update repository and submodules:
 ```sh
 make sync
 ```
