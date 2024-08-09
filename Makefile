@@ -1,22 +1,22 @@
-make: .make/init sync
+make: .stack/init sync
 
 sync:
 	git pull --recurse-submodules
 
-deploy:
-	@$(MAKE) -C swarmlibs deploy detach=false
+deploy: .stack/swarmlibs
 	@$(MAKE) -C promstack deploy detach=false
 	@$(MAKE) -C logstack  deploy detach=false
 
 remove:
-	@$(MAKE) -C swarmlibs remove
 	@$(MAKE) -C promstack remove
 	@$(MAKE) -C logstack  remove
 
-.make/init:
-	@mkdir -p .make
-	@touch .make/init
+.stack/init:
+	@mkdir -p .stack && touch .stack/init
 	hacks/reinitialize.sh
 	git pull --recurse-submodules
 	git config --local submodule.recurse true
 	git config --local status.submodulesummary 1
+.stack/swarmlibs:
+	@mkdir -p .stack && touch .stack/swarmlibs
+	@$(MAKE) -C swarmlibs deploy detach=false
