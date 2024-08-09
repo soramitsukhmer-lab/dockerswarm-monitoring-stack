@@ -18,9 +18,11 @@ remove:
 	$(MAKE) -C promstack remove
 	$(MAKE) -C swarmlibs remove
 
-reinitialize:
-	@hacks/reinitialize.sh
 sync:
 	git submodule update --init --recursive -- swarmlibs
 	git submodule update --init --recursive -- promstack
 	git submodule update --init --recursive -- logstack
+reinitialize: hacks/reinitialize.sh sync
+.PHONY: hacks/reinitialize.sh
+hacks/reinitialize.sh:
+	@hacks/reinitialize.sh
