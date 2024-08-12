@@ -25,7 +25,7 @@ $(1)/upgrade:
 	@$(MAKE) -C $(1) upgrade
 .PHONY: $(1)/remove
 $(1)/remove:
-	@$(MAKE) -C $(1) remove detach=false
+	@$(MAKE) -C $(1) remove && rm -rf .stack/$(1)
 endef
 
 $(eval $(call stack_specs,swarmlibs))
