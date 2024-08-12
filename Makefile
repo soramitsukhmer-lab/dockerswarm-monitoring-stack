@@ -22,7 +22,7 @@ $(1)/deploy:
 	@$(MAKE) -C $(1) deploy detach=false
 .PHONY: $(1)/upgrade
 $(1)/upgrade:
-	@$(MAKE) -C $(1) upgrade detach=false
+	@$(MAKE) -C $(1) upgrade
 .PHONY: $(1)/remove
 $(1)/remove:
 	@$(MAKE) -C $(1) remove detach=false
