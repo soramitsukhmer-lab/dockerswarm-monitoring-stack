@@ -1,19 +1,10 @@
 make: .stack/init sync
+deploy: .stack/swarmlibs .stack/promstack .stack/logstack
+upgrade: promstack/upgrade logstack/upgrade
+remove: promstack/remove logstack/remove
 
 sync:
 	git pull --recurse-submodules
-
-deploy: .stack/swarmlibs
-	@$(MAKE) -C promstack deploy detach=false
-	@$(MAKE) -C logstack  deploy detach=false
-
-upgrade:
-	@$(MAKE) -C promstack upgrade
-	@$(MAKE) -C logstack  upgrade
-
-remove:
-	@$(MAKE) -C promstack remove
-	@$(MAKE) -C logstack  remove
 
 .stack/init:
 	@mkdir -p .stack && touch .stack/init
@@ -21,6 +12,22 @@ remove:
 	git pull --recurse-submodules
 	git config --local submodule.recurse true
 	git config --local status.submodulesummary 1
-.stack/swarmlibs:
-	@mkdir -p .stack && touch .stack/swarmlibs
-	@$(MAKE) -C swarmlibs deploy detach=false
+
+define stack_specs
+.stack/$(1):
+	@mkdir -p .stack && touch .stack/$(1)
+	@$(MAKE) -C $(1) deploy detach=false
+.PHONY: $(1)/deploy
+$(1)/deploy:
+	@$(MAKE) -C $(1) deploy detach=false
+.PHONY: $(1)/upgrade
+$(1)/upgrade:
+	@$(MAKE) -C $(1) upgrade detach=false
+.PHONY: $(1)/remove
+$(1)/remove:
+	@$(MAKE) -C $(1) remove detach=false
+endef
+
+$(eval $(call stack_specs,swarmlibs))
+$(eval $(call stack_specs,promstack))
+$(eval $(call stack_specs,logstack))
