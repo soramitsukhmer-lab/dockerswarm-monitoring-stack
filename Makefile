@@ -1,7 +1,6 @@
 make: .stack/init sync
 deploy: .stack/swarmlibs .stack/promstack .stack/logstack
 upgrade: promstack/upgrade logstack/upgrade
-remove: promstack/remove logstack/remove
 
 sync:
 	git pull --recurse-submodules
