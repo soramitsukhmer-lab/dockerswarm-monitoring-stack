@@ -7,6 +7,3 @@
 [submodule "swarmlibs"]
 	path = swarmlibs
 	url = https://github.com/swarmlibs/swarmlibs.git
-[submodule "promstack-compose-support"]
-	path = promstack-compose-support
-	url = https://github.com/swarmlibs/promstack-compose-support.git
