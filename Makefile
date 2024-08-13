@@ -1,6 +1,6 @@
 make: .stack .stack/init sync
-deploy: .stack .stack/swarmlibs .stack/promstack .stack/logstack
-upgrade: promstack/upgrade logstack/upgrade
+deploy: .stack .stack/swarmlibs .stack/promstack .stack/promstack-compose-support .stack/logstack
+upgrade: promstack/upgrade promstack-compose-support/upgrade logstack/upgrade
 
 sync:
 	git pull --recurse-submodules
@@ -32,4 +32,5 @@ endef
 
 $(eval $(call stack_specs,swarmlibs))
 $(eval $(call stack_specs,promstack))
+$(eval $(call stack_specs,promstack-compose-support))
 $(eval $(call stack_specs,logstack))
