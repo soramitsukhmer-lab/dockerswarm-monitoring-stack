@@ -3,16 +3,13 @@ deploy: .stack .stack/swarmlibs .stack/promstack .stack/logstack
 upgrade: promstack/upgrade logstack/upgrade
 
 sync:
-	git pull --recurse-submodules
+	git pull --rebase=true origin --prune --verbose
+	git submodule update --init --recursive -- logstack promstack swarmlibs
 
 .stack:
 	@mkdir -p .stack
 .stack/init:
 	@touch .stack/init
-	utils/reinitialize.sh
-	git pull --recurse-submodules
-	git config --local submodule.recurse true
-	git config --local status.submodulesummary 1
 
 define stack_specs
 .stack/$(1):
