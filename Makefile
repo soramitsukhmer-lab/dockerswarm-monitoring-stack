@@ -4,12 +4,15 @@ deploy:
 	@$(MAKE) .stack/swarmlibs
 	@$(MAKE) .stack/promstack
 	@$(MAKE) .stack/logstack
+	@$(MAKE) .stack/promstack-compose-support
 upgrade:
 	@$(MAKE) promstack/upgrade
 	@$(MAKE) logstack/upgrade
+	@$(MAKE) promstack-compose-support/upgrade
 remove:
 	@$(MAKE) promstack/remove
 	@$(MAKE) logstack/remove
+	@$(MAKE) promstack-compose-support/remove
 
 pull:
 	git pull --rebase=true origin --prune --verbose
@@ -36,3 +39,4 @@ endef
 $(eval $(call stack_specs,swarmlibs))
 $(eval $(call stack_specs,promstack))
 $(eval $(call stack_specs,logstack))
+$(eval $(call stack_specs,promstack-compose-support))
