@@ -1,15 +1,15 @@
 make:
-deploy: \
-	.stack \
-	.stack/swarmlibs \
-	.stack/promstack \
-	.stack/logstack
-upgrade: \
-	promstack/upgrade \
-	logstack/upgrade
-remove: \
-	promstack/remove \
-	logstack/remove
+deploy:
+	@$(MAKE) .stack
+	@$(MAKE) .stack/swarmlibs
+	@$(MAKE) .stack/promstack
+	@$(MAKE) .stack/logstack
+upgrade:
+	@$(MAKE) promstack/upgrade
+	@$(MAKE) logstack/upgrade
+remove:
+	@$(MAKE) promstack/remove
+	@$(MAKE) logstack/remove
 
 pull:
 	git pull --rebase=true origin --prune --verbose
