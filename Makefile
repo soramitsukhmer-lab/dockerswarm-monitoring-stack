@@ -1,6 +1,7 @@
 make: .stack .stack/init sync
 deploy: .stack .stack/swarmlibs .stack/promstack .stack/logstack
 upgrade: promstack/upgrade logstack/upgrade
+remove: promstack/remove logstack/remove
 
 sync:
 	git pull --rebase=true origin --prune --verbose
