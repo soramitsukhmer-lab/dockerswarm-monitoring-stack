@@ -10,10 +10,12 @@ sync:
 .stack:
 	@mkdir -p .stack
 .stack/init:
+	@test -d .stack || echo "Please run 'make' first"; exit 1
 	@touch .stack/init
 
 define stack_specs
 .stack/$(1):
+	@test -d .stack || echo "ERR: Please run 'make' first."; exit 1
 	@touch .stack/$(1)
 	@$(MAKE) -C $(1) deploy detach=false
 .PHONY: $(1)/deploy
