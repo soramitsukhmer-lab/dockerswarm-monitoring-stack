@@ -1,5 +1,5 @@
 make: .stack .stack/init sync
-deploy: .stack .stack/swarmlibs .stack/promstack .stack/logstack
+deploy: .stack/swarmlibs .stack/promstack .stack/logstack
 upgrade: promstack/upgrade logstack/upgrade
 remove: promstack/remove logstack/remove
 
