@@ -36,17 +36,12 @@ The Docker Engine now exposes Prometheus-compatible metrics on port `9323` on al
 
 ### Deplyoment
 
-First, you will need to prepare the deployment by running the following command, (only needed to be run once):
-```sh
-make
-
-# To update repository and submodules
-make sync
-```
-
 You can deploy the stack by running the following command:
 ```sh
 make deploy
+
+# To fetch lastest changes from the repository, run the following command:
+make pull
 ```
 
 ## Promstack
